@@ -30,6 +30,19 @@ const Navbar = () => {
             <li><NavLink className="dropdown-item text-white bg-black"   to="/sneakers">Sneakers</NavLink></li>
           </ul>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link text-white" to="/about">About Us</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link text-white" to="/contact">Contact Us</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link text-white" to="/login">Login</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link text-white" to="/register">Register</NavLink>
+        </li>
+        
        
       </ul>
       <form className="d-flex" role="search">
@@ -40,7 +53,7 @@ const Navbar = () => {
   </div>
 </nav>
 
-    </>
+    </> 
   )
 }
 

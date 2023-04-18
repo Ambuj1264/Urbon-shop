@@ -30,14 +30,14 @@ const ViewProduct = (props) => {
               className="container-fluid"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <div className="left" style={{ margin: "50px", width:"50%" }}>
+              <div className="left" style={{ margin: "80px", width:"50%" }}>
                 <img
                   src={v.image}
                   alt="..."
                   style={{ width: "400px", height: "400px" }}
                 />
               </div>
-              <div className="right" style={{ margin: "50px", width:"50%" }}>
+              <div className="right" style={{ margin: "80px", width:"50%" }}>
                 <span> Details of the project </span>
                 <ul>
                   <li style={{ color: "blue" }}>Title : {v.title}</li>
@@ -46,12 +46,15 @@ const ViewProduct = (props) => {
                   </li>
                   <li style={{ color: "blue" }}>Category : {v.category}</li>
                   <li style={{ color: "blue" }}>Rate : {v.rating.rate}</li>
-                  <li style={{ color: "green" }}>
+                  <li style={{ color: "red" }}>
                     Available Item : {v.rating.count}
                   </li>
-                  <li style={{ color: "red" }}>Price : {v.price} Rs.</li>
+                  <li style={{ color: "green" }}>Price : {v.price} Rs.</li>
                 </ul>
                 <Link to="/" className="btn btn-primary">
+                  Add to Cart
+                </Link>
+                <Link to="/"  style={{width:"120px", marginLeft:"20px"}}className="btn btn-success">
                   Buy Now
                 </Link>
               </div>
