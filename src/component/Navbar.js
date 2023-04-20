@@ -1,8 +1,30 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-
-
+import React, { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 const Navbar = () => {
+  const [state,setState]= useState({
+    search:""
+  })
+  const navigate=useNavigate()
+  const handler=(e)=>{
+    setState({...state,[e.target.name]:e.target.value})
+  }
+const submitData=async()=>{
+    try {
+      const responseOfAxios= await axios.post("http://localhost:4500/manager",{
+        search:JSON.stringify(state.search)
+      })
+      if(responseOfAxios.data.length>=1){
+        console.log(responseOfAxios.data,"datatatatatat")
+      }else{
+        alert("Serach is not valid")
+        navigate("/");
+      }
+    } catch (error) {
+      alert("Serach is not valid")
+      navigate("/")
+    }
+}
   return (
     <>
  <nav className="navbar navbar-expand-lg bg-black ">
@@ -46,8 +68,8 @@ const Navbar = () => {
        
       </ul>
       <form className="d-flex" role="search">
-        <input className="form-control me-2 text-white" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success text-white " type="submit">Search</button>
+        <input className="form-control me-2 text-black"  name="search" value={state.search} onChange={handler} type="search" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-success text-white " onClick={submitData} type="submit">Search</button>
       </form>
     </div>
   </div>

@@ -14,6 +14,7 @@ import Reset from "./component/Reset";
 import Protected from "./component/Protected";
 import Cart from "./component/Cart";
 import Payment from "./component/Payment";
+import Contact from "./component/Contact";
 const App = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/clothes" element={<Clothes />} />
           <Route path="/ViewProduct/:id" element={<ViewProduct />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Forget></Forget>} />
