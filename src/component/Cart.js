@@ -13,7 +13,7 @@ const Cart = () => {
     <div>
       <div className="d-flex flex-wrap justify-content-lg-evenly">
         <h1 style={{ display: "inline-block" }}>Cart Page</h1>
-        <Link to="/product" className="btn btn-primary">Go to Products Link</Link>
+        <Link to="/clothes" className="btn btn-primary">Go to Products Link</Link>
       </div>
       <div className="cart-page-container">
         <table>

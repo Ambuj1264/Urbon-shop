@@ -12,7 +12,8 @@ const Navbar = () => {
 const submitData=async()=>{
     try {
       const responseOfAxios= await axios.post("http://localhost:4500/manager",{
-        search:JSON.stringify(state.search)
+        search:(state.search),
+        start:"0"
       })
       if(responseOfAxios.data.length>=1){
         console.log(responseOfAxios.data,"datatatatatat")
